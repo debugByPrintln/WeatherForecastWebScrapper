@@ -27,6 +27,7 @@ public class WeatherParser {
         res.remove(0);
         res.remove(4);
         res.add(0, dates.get(0));
+
         return res;
     }
 
@@ -115,12 +116,12 @@ public class WeatherParser {
     }
 
     private Elements getTBodyElements() throws IOException {
-        Document doc = connectAndGetDocument();
+        Document doc = getDocument();
 
         return doc.getElementsByTag("tbody");
     }
 
-    private Document connectAndGetDocument() throws IOException {
+    private Document getDocument() throws IOException {
         return Jsoup.connect("https://www.timeanddate.com/weather/russia/saint-peterburg/ext")
                 .userAgent("Chrome/4.0.249.0 Safari/532.5")
                 .referrer("https://www.google.com")

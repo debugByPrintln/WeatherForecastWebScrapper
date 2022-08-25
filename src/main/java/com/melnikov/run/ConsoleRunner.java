@@ -1,11 +1,11 @@
-package com.melnikov.output;
+package com.melnikov.run;
 
 import com.melnikov.printer.TablePrinter;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ConsolePrinter {
+public class ConsoleRunner {
     static TablePrinter tablePrinter = new TablePrinter();
     static Scanner scanner = new Scanner(System.in);
 

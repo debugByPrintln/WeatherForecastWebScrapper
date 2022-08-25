@@ -12,24 +12,30 @@ public class TablePrinter {
     public void printTwoWeeksForecastTable() throws IOException {
         AsciiTable table = tableBuilder.buildTwoWeeksForecastTable();
 
-        table.setTextAlignment(TextAlignment.CENTER);
-        String render = table.render(175);
-        System.out.println(render);
+        String render = renderTable(table);
+        printTable(render);
     }
 
     public void printOneWeekForecastTable() throws IOException {
         AsciiTable table = tableBuilder.buildOneWeekForecastTable();
 
-        table.setTextAlignment(TextAlignment.CENTER);
-        String render = table.render(175);
-        System.out.println(render);
+        String render = renderTable(table);
+        printTable(render);
     }
 
     public void printOneDayForecastTable() throws IOException {
         AsciiTable table = tableBuilder.buildOneDayForecastTable();
 
+        String render = renderTable(table);
+        printTable(render);
+    }
+
+    private void printTable(String renderedTable){
+        System.out.println(renderedTable);
+    }
+
+    private String renderTable(AsciiTable table){
         table.setTextAlignment(TextAlignment.CENTER);
-        String render = table.render(175);
-        System.out.println(render);
+        return table.render(175);
     }
 }
